@@ -153,6 +153,7 @@ After pasting the public key into the dockers instance’s authorized_keys, test
 Step 10: Creating Deployment Playbook:
 Create a 'playbook' directory on the Jenkins instance and a deployment.yaml file containing scripts for building and deploying Docker containers. 
 ![image](https://github.com/user-attachments/assets/cc0f944a-705d-48b5-a9ee-f62b35cdbfe0)
+
 This playbook includes deployment tasks such as stopping and removing containers, building Docker images, and creating containers on the target remote server (Docker server).
 ![image](https://github.com/user-attachments/assets/1d3d864a-ed8a-456c-a979-1cd9f69b9b1c)
 Run the ansible playbook “deployment.yaml” to deploy the application manually.
