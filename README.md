@@ -37,7 +37,7 @@ $ /bin/bash
 
 # Step 3: Installing Jenkins:
 Update the package lists for available upgrades.
-$ sudo apt update
+/n $ sudo apt update
 ![image](https://github.com/user-attachments/assets/ccbcc077-66a0-4f68-88ff-0c75cd4f8ed9)
 Follow the installation instructions from the Jenkins documentation.
 Install Java, a prerequisite for Jenkins.
@@ -85,6 +85,7 @@ After creating the pipeline, manually click on 'Build Now' to ensure it builds s
 ![image](https://github.com/user-attachments/assets/0a7ded2a-d2b2-4546-9d58-a4aad693735f)
 Next, make changes to the GitHub repository and commit the code to verify that the pipeline triggers and builds automatically in Jenkins. 
 ![image](https://github.com/user-attachments/assets/6d923cd4-ab99-4040-9d57-13bca1423c28)
+
 The pipeline triggered automatically.
 ![image](https://github.com/user-attachments/assets/fae84ebf-5e89-4540-a7bb-464430573abb)
 ![image](https://github.com/user-attachments/assets/175fb12e-9c41-47f0-81c6-176177f092cd)
