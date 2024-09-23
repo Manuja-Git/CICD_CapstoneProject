@@ -1,8 +1,8 @@
 # CICD_CapstoneProject
 
-Setting Up a Secure CI/CD Pipeline with Jenkins, Docker, and Ansible on AWS
+# Setting Up a Secure CI/CD Pipeline with Jenkins, Docker, and Ansible on AWS
 
-Step 1: Setting Up AWS Instances for Jenkins and Docker
+# Step 1: Setting Up AWS Instances for Jenkins and Docker
 Log into AWS and create two instances, as shown in the screenshots below, to separate the CI/CD process from the container runtime environment. This setup enhances security and resource management. 
 
 ![image](https://github.com/user-attachments/assets/cf863782-e4cc-43ca-99c5-b6cef8c4af80)
@@ -23,7 +23,7 @@ Next, access the security groups for the Jenkins instance and add an inbound rul
 ![image](https://github.com/user-attachments/assets/0d85c1d3-69e8-444a-be0a-205bccf85b7b)
 ![image](https://github.com/user-attachments/assets/eed947fc-ba6e-44d7-9731-db628ae54cee)
 
-Step 2: Connect to the Jenkins server securely by using SSH key pair securely in local machine:
+# Step 2: Connect to the Jenkins server securely by using SSH key pair securely in local machine:
 Open the terminal and connect to the Jenkins instance on an AWS EC2 server securely by using the following command with specified SSH key pair. 
 ssh -i <key-pair> ubuntu@<jenkins-instance-public-IP>
 This allows remote access and management of the Jenkins server from our local machine.
