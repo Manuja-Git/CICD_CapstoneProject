@@ -24,9 +24,9 @@ Next, access the security groups for the Jenkins instance and add an inbound rul
 ![image](https://github.com/user-attachments/assets/eed947fc-ba6e-44d7-9731-db628ae54cee)
 
 # Step 2: Connect to the Jenkins server securely by using SSH key pair securely in local machine:
-Open the terminal and connect to the Jenkins instance on an AWS EC2 server securely by using the following command with specified SSH key pair. 
-ssh -i <key-pair> ubuntu@<jenkins-instance-public-IP> 
-This allows remote access and management of the Jenkins server from our local machine.
+Open the terminal and connect to the Jenkins instance on an AWS EC2 server securely by using the following command with specified SSH key pair.  
+ssh -i <key-pair> ubuntu@<jenkins-instance-public-IP>   
+This allows remote access and management of the Jenkins server from our local machine.    
 
 ![image](https://github.com/user-attachments/assets/8579affc-e75b-4012-b9ab-11fc2b56a02f)
 Change the hostname of the machine to "jenkins" 
