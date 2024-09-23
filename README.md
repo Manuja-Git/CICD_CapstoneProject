@@ -105,6 +105,7 @@ Follow the commands from the Docker documentation to install Docker and related 
 ![image](https://github.com/user-attachments/assets/876cfc94-8d2c-4c72-8c50-c9dd876c56f1)
 ![image](https://github.com/user-attachments/assets/6190f30b-bcc2-41d0-bffe-a4a9c498d094)
 ![image](https://github.com/user-attachments/assets/76334b29-3c75-4676-9f5e-61c46d9c88e7)
+
 Add the current user to the docker group to authenticate to use any docker commands.
 $ sudo usermod -aG docker ubuntu
 Refresh group membership to apply the changes.
@@ -116,12 +117,12 @@ Switch to the root user and generate SSH key pairs for secure access.
 Navigate to the '.ssh/' directory, open the authorized_keys file, and paste the public key from the Jenkins instance for passwordless SSH authentication. This allows the Jenkins server to securely connect to the Docker instance without needing to enter a password each time. This setup is essential for automating deployment tasks, as it facilitates seamless communication between the Jenkins server and the Docker instance during the CI/CD process.
 ![image](https://github.com/user-attachments/assets/c56ea02f-7f56-4add-a2cd-291c0aff0efb)
 ![image](https://github.com/user-attachments/assets/a8088e25-73b4-4640-bb59-8b3b3037538e)
+
 Creating the target Directory on Docker instance:
 Create a new directory named 'project' to serve as the target folder by using below commands
 # mkdir project
-# cd project![image](https://github.com/user-attachments/assets/0d9629f2-f3e4-40e8-b03d-e03c4c4d766c)
-
-# ls   Initially, no files will be present. 
+# cd project
+# ls   Initially, no files will be present.
 ![image](https://github.com/user-attachments/assets/79a7c4c1-0172-4225-9015-ca3da926864e)
 After executing the Ansible playbooks, files will appear in the project folder, which will later be used to build Docker images and containers. 
 ![image](https://github.com/user-attachments/assets/f9c313ae-4b79-4b77-88ed-1ee71d42869a)
