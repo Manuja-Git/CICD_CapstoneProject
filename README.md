@@ -25,28 +25,27 @@ Next, access the security groups for the Jenkins instance and add an inbound rul
 
 # Step 2: Connect to the Jenkins server securely by using SSH key pair securely in local machine:
 Open the terminal and connect to the Jenkins instance on an AWS EC2 server securely by using the following command with specified SSH key pair.  
-ssh -i <key-pair> ubuntu@<jenkins-instance-public-IP>   
 This allows remote access and management of the Jenkins server from our local machine.    
 
 ![image](https://github.com/user-attachments/assets/8579affc-e75b-4012-b9ab-11fc2b56a02f)
-Change the hostname of the machine to "jenkins" 
-$ sudo hostnamectl set-hostname Jenkins 
-Change the shell to bash to reflect the updated hostname. 
-$ /bin/bash 
+Change the hostname of the machine to "jenkins"  
+$ sudo hostnamectl set-hostname Jenkins  
+Change the shell to bash to reflect the updated hostname.  
+$ /bin/bash  
 ![image](https://github.com/user-attachments/assets/da5c2ca7-0559-4865-84e8-e754e1c338fa)
 
 # Step 3: Installing Jenkins:
-Update the package lists for available upgrades.
-$ sudo apt update
+Update the package lists for available upgrades.  
+$ sudo apt update  
 ![image](https://github.com/user-attachments/assets/ccbcc077-66a0-4f68-88ff-0c75cd4f8ed9)
 Follow the installation instructions from the Jenkins documentation.
-Install Java, a prerequisite for Jenkins.
-$ sudo apt install openjdk-17-jre
+Install Java, a prerequisite for Jenkins.  
+$ sudo apt install openjdk-17-jre  
 ![image](https://github.com/user-attachments/assets/91275107-1881-4210-a5c3-b010ab082f3f)
 Download the Jenkins repository GPG key and Install Jenkins.
 ![image](https://github.com/user-attachments/assets/457c522e-c904-4937-b6d6-042ca8d050ad)
-Check the status of Jenkins service and retrieve the initial password.
-$ systemctl status jenkins
+Check the status of Jenkins service and retrieve the initial password.  
+$ systemctl status jenkins  
 ![image](https://github.com/user-attachments/assets/7cf30191-bc50-4169-876d-ecb61114f684)
 Open Jenkins in the browser using the public IP address (e.g., http://54.208.2.242:8080/) and unlock it with the secret password.
 ![image](https://github.com/user-attachments/assets/a9939ec6-b736-4f7b-a142-1bbe44c6b8d9)
@@ -91,14 +90,13 @@ The pipeline triggered automatically.
 ![image](https://github.com/user-attachments/assets/175fb12e-9c41-47f0-81c6-176177f092cd)
 
 # Step 7: Connect to the Docker server securely by using SSH key pair securely in local machine:
-Open the second terminal and connect to the Docker instance on an AWS EC2 server securely by using the following command with specified SSH key pair. 
-ssh -i <key-pair> ubuntu@<Docker-instance-public-IP>
-This allows remote access and management of the Docker server from our local machine
+Open the second terminal and connect to the Docker instance on an AWS EC2 server securely by using the following command with specified SSH key pair.   
+This allows remote access and management of the Docker server from our local machine  
 ![image](https://github.com/user-attachments/assets/21f33daf-4dbf-49f0-8020-d8672b210dbc)
-Change the hostname of the machine to "docker"
-$ sudo hostnamectl set-hostname docker
-Change the shell to bash to reflect the updated hostname.
-$ /bin/bash
+Change the hostname of the machine to "docker"  
+$ sudo hostnamectl set-hostname docker  
+Change the shell to bash to reflect the updated hostname.  
+$ /bin/bash  
 ![image](https://github.com/user-attachments/assets/a7262635-f96f-49e8-a299-0b7604170e4e)
 
 # Step 8: Installing Docker:
@@ -107,23 +105,23 @@ Follow the commands from the Docker documentation to install Docker and related 
 ![image](https://github.com/user-attachments/assets/6190f30b-bcc2-41d0-bffe-a4a9c498d094)
 ![image](https://github.com/user-attachments/assets/76334b29-3c75-4676-9f5e-61c46d9c88e7)
 
-Add the current user to the docker group to authenticate to use any docker commands.
-$ sudo usermod -aG docker ubuntu
-Refresh group membership to apply the changes.
-$ newgrp docker
-Check the running containers.
-$ docker ps
+Add the current user to the docker group to authenticate to use any docker commands.  
+$ sudo usermod -aG docker ubuntu  
+Refresh group membership to apply the changes.  
+$ newgrp docker  
+Check the running containers.  
+$ docker ps  
 ![image](https://github.com/user-attachments/assets/fb741f5c-1066-4672-bc3e-98efd8bdacd9)
-Switch to the root user and generate SSH key pairs for secure access.
+Switch to the root user and generate SSH key pairs for secure access.  
 Navigate to the '.ssh/' directory, open the authorized_keys file, and paste the public key from the Jenkins instance for passwordless SSH authentication. This allows the Jenkins server to securely connect to the Docker instance without needing to enter a password each time. This setup is essential for automating deployment tasks, as it facilitates seamless communication between the Jenkins server and the Docker instance during the CI/CD process.
 ![image](https://github.com/user-attachments/assets/c56ea02f-7f56-4add-a2cd-291c0aff0efb)
 ![image](https://github.com/user-attachments/assets/a8088e25-73b4-4640-bb59-8b3b3037538e)
 
 Creating the target Directory on Docker instance:
-Create a new directory named 'project' to serve as the target folder by using below commands
-mkdir project
-cd project
-ls  --> Initially, no files will be present. 
+Create a new directory named 'project' to serve as the target folder by using below commands.  
+mkdir project  
+cd project  
+ls  --> Initially, no files will be present.  
 ![image](https://github.com/user-attachments/assets/79a7c4c1-0172-4225-9015-ca3da926864e)
 After executing the Ansible playbooks, files will appear in the project folder, which will later be used to build Docker images and containers. 
 ![image](https://github.com/user-attachments/assets/f9c313ae-4b79-4b77-88ed-1ee71d42869a)
@@ -133,9 +131,9 @@ Install Ansible on the Jenkins instance by following the instructions from the A
 ![image](https://github.com/user-attachments/assets/6248d0df-a709-4dae-a1cb-25e6af3410b9)
 ![image](https://github.com/user-attachments/assets/fac76007-67f9-4071-a4ce-660b0fbdc4fd)
 
-To run Docker commands on the Jenkins instance, install additional dependencies:
-$ sudo apt install python3-pip
-$ pip install docker
+To run Docker commands on the Jenkins instance, install additional dependencies:  
+$ sudo apt install python3-pip  
+$ pip install docker  
 ![image](https://github.com/user-attachments/assets/c23a03fc-b257-47fa-a33a-de3137dcb771)
 ![image](https://github.com/user-attachments/assets/face1dbe-c051-43fb-8164-24eb86f5109a)
 ![image](https://github.com/user-attachments/assets/cf9bcf82-a678-4e57-8186-1c4bf116ea08)
@@ -145,7 +143,7 @@ Navigate to the '/etc/ansible/' directory and open the hosts file to add the Doc
 ![image](https://github.com/user-attachments/assets/cbea8da6-529a-4814-8e60-dddf72b0f704)
 Switch to the root user and then Jenkins user, to generate an SSH key for Jenkins to communicate with Docker.
 ![image](https://github.com/user-attachments/assets/5694bc52-29ee-4e1b-989a-2e868557586c)
-Navigate to the ‘.ssh/’ directory and copy the public key which will get pasted in the authorized key file of dockers instance:
+Navigate to the ‘.ssh/’ directory and copy the public key which will get pasted in the authorized key file of dockers instance:  
 ssh public key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMypipQBMPdugO8+g/rcVFLBkg/Q7Fq6zxQexC7V62vM jenkins@jenkins
 ![image](https://github.com/user-attachments/assets/1f7cddf7-2086-452b-816c-04aff52faee7)
 After pasting the public key into the dockers instance’s authorized_keys, test the connection to the Docker server from the Jenkins instance. 
