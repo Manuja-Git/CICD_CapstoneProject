@@ -25,19 +25,19 @@ Next, access the security groups for the Jenkins instance and add an inbound rul
 
 # Step 2: Connect to the Jenkins server securely by using SSH key pair securely in local machine:
 Open the terminal and connect to the Jenkins instance on an AWS EC2 server securely by using the following command with specified SSH key pair. 
-ssh -i <key-pair> ubuntu@<jenkins-instance-public-IP>
+ssh -i <key-pair> ubuntu@<jenkins-instance-public-IP> 
 This allows remote access and management of the Jenkins server from our local machine.
 
 ![image](https://github.com/user-attachments/assets/8579affc-e75b-4012-b9ab-11fc2b56a02f)
-Change the hostname of the machine to "jenkins"
-$ sudo hostnamectl set-hostname Jenkins
-Change the shell to bash to reflect the updated hostname.
-$ /bin/bash
+Change the hostname of the machine to "jenkins" 
+$ sudo hostnamectl set-hostname Jenkins 
+Change the shell to bash to reflect the updated hostname. 
+$ /bin/bash 
 ![image](https://github.com/user-attachments/assets/da5c2ca7-0559-4865-84e8-e754e1c338fa)
 
 # Step 3: Installing Jenkins:
 Update the package lists for available upgrades.
-/n $ sudo apt update
+$ sudo apt update
 ![image](https://github.com/user-attachments/assets/ccbcc077-66a0-4f68-88ff-0c75cd4f8ed9)
 Follow the installation instructions from the Jenkins documentation.
 Install Java, a prerequisite for Jenkins.
