@@ -35,7 +35,7 @@ Change the shell to bash to reflect the updated hostname.
 $ /bin/bash
 ![image](https://github.com/user-attachments/assets/da5c2ca7-0559-4865-84e8-e754e1c338fa)
 
-Step 3: Installing Jenkins:
+# Step 3: Installing Jenkins:
 Update the package lists for available upgrades.
 $ sudo apt update
 ![image](https://github.com/user-attachments/assets/ccbcc077-66a0-4f68-88ff-0c75cd4f8ed9)
@@ -57,7 +57,7 @@ Install the suggested plugins and create the first admin user.
 Click on ‘Start using Jenkins’.
 ![image](https://github.com/user-attachments/assets/279054d2-6c2f-4c51-af7b-e1f5817e408d)
 
-Step 4: Setting up Jenkins Pipeline:
+# Step 4: Setting up Jenkins Pipeline:
 Create a new pipeline named 'ansible-jenkins-pipeline' and configure a Freestyle project with Git SCM. 
 ![image](https://github.com/user-attachments/assets/89fa012d-f31d-4be7-b115-88bb5e6830d3)
 ![image](https://github.com/user-attachments/assets/c294e2ff-fc95-4469-a137-78e8c604697a)
@@ -72,14 +72,14 @@ Provide two custom commands to copy files from the Jenkins workspace to the spec
 Click on Apply and Save to create the pipeline.
 ![image](https://github.com/user-attachments/assets/7e971711-cd80-49a5-823f-a1d05324d138)
 
-Step 5: GitHub Configuration:
+# Step 5: GitHub Configuration:
 Go to your GitHub settings and add a webhook with the Payload URL (e.g., http://54.208.2.242:8080/github-webhook/) to enable communication.
 ![image](https://github.com/user-attachments/assets/5af34964-63d4-4afe-bd56-2eddfa1b1e08)
 ![image](https://github.com/user-attachments/assets/efbb8f68-e89f-40ed-83b7-cdda29cfedf1)
 ![image](https://github.com/user-attachments/assets/5d309ecb-3494-4b62-9175-cad2330e1ca1)
 ![image](https://github.com/user-attachments/assets/49607ebb-30dd-428f-a67c-0902034a9e62)
 
-Step 6: Testing the Pipeline:
+# Step 6: Testing the Pipeline:
 After creating the pipeline, manually click on 'Build Now' to ensure it builds successfully without errors. 
 ![image](https://github.com/user-attachments/assets/6d614fef-39b7-43a5-b82b-31de2fc5288e)
 ![image](https://github.com/user-attachments/assets/0a7ded2a-d2b2-4546-9d58-a4aad693735f)
@@ -89,7 +89,7 @@ The pipeline triggered automatically.
 ![image](https://github.com/user-attachments/assets/fae84ebf-5e89-4540-a7bb-464430573abb)
 ![image](https://github.com/user-attachments/assets/175fb12e-9c41-47f0-81c6-176177f092cd)
 
-Step 7: Connect to the Docker server securely by using SSH key pair securely in local machine:
+# Step 7: Connect to the Docker server securely by using SSH key pair securely in local machine:
 Open the second terminal and connect to the Docker instance on an AWS EC2 server securely by using the following command with specified SSH key pair. 
 ssh -i <key-pair> ubuntu@<Docker-instance-public-IP>
 This allows remote access and management of the Docker server from our local machine
@@ -100,7 +100,7 @@ Change the shell to bash to reflect the updated hostname.
 $ /bin/bash
 ![image](https://github.com/user-attachments/assets/a7262635-f96f-49e8-a299-0b7604170e4e)
 
-Step 8: Installing Docker:
+# Step 8: Installing Docker:
 Follow the commands from the Docker documentation to install Docker and related tools.
 ![image](https://github.com/user-attachments/assets/876cfc94-8d2c-4c72-8c50-c9dd876c56f1)
 ![image](https://github.com/user-attachments/assets/6190f30b-bcc2-41d0-bffe-a4a9c498d094)
@@ -127,7 +127,7 @@ ls  --> Initially, no files will be present.
 After executing the Ansible playbooks, files will appear in the project folder, which will later be used to build Docker images and containers. 
 ![image](https://github.com/user-attachments/assets/f9c313ae-4b79-4b77-88ed-1ee71d42869a)
 
-Step 9: Installing Ansible on Jenkins Instance:
+# Step 9: Installing Ansible on Jenkins Instance:
 Install Ansible on the Jenkins instance by following the instructions from the Ansible documentation:
 ![image](https://github.com/user-attachments/assets/6248d0df-a709-4dae-a1cb-25e6af3410b9)
 ![image](https://github.com/user-attachments/assets/fac76007-67f9-4071-a4ce-660b0fbdc4fd)
@@ -151,7 +151,7 @@ After pasting the public key into the dockers instance’s authorized_keys, test
 ![image](https://github.com/user-attachments/assets/2025f0cf-e39d-4e14-bf9b-e743b3c6d344)
 ![image](https://github.com/user-attachments/assets/10b95d0d-09ba-4e00-ab0e-e762004835b0)
 
-Step 10: Creating Deployment Playbook:
+# Step 10: Creating Deployment Playbook:
 Create a 'playbook' directory on the Jenkins instance and a deployment.yaml file containing scripts for building and deploying Docker containers. 
 ![image](https://github.com/user-attachments/assets/cc0f944a-705d-48b5-a9ee-f62b35cdbfe0)
 
@@ -165,7 +165,7 @@ After successful execution of playbook, Docker images and containers will be cre
 Delete the files from the project directory and test the pipeline by making changes in the GitHub repository to trigger it automatically.
 ![image](https://github.com/user-attachments/assets/a9d2e419-6f24-4cbe-9122-f2ab9e65db16)
 
-Step 11: Final Testing:
+# Step 11: Final Testing:
 Modify the code in the GitHub repository to check that the pipeline triggers and builds the latest changes automatically. For example, change the title and some content in the index.html file and commit the changes.
 ![image](https://github.com/user-attachments/assets/6c6f6946-1a39-4c8c-bb8a-c71855d64e36)
 ![image](https://github.com/user-attachments/assets/293aeef9-741c-466d-85ee-ce42d24036c7)
