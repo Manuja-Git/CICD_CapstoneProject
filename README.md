@@ -120,9 +120,9 @@ Navigate to the '.ssh/' directory, open the authorized_keys file, and paste the 
 
 Creating the target Directory on Docker instance:
 Create a new directory named 'project' to serve as the target folder by using below commands
-# mkdir project
-# cd project
-# ls   Initially, no files will be present.
+mkdir project
+cd project
+ls  --> Initially, no files will be present. 
 ![image](https://github.com/user-attachments/assets/79a7c4c1-0172-4225-9015-ca3da926864e)
 After executing the Ansible playbooks, files will appear in the project folder, which will later be used to build Docker images and containers. 
 ![image](https://github.com/user-attachments/assets/f9c313ae-4b79-4b77-88ed-1ee71d42869a)
