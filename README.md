@@ -8,6 +8,7 @@ Log into AWS and create two instances, as shown in the screenshots below, to sep
 ![image](https://github.com/user-attachments/assets/cf863782-e4cc-43ca-99c5-b6cef8c4af80)
 ![image](https://github.com/user-attachments/assets/8b0fc1d7-7e1b-422c-b6f6-5912ddcdef57)
 ![image](https://github.com/user-attachments/assets/faf652ef-ad8f-4ebe-b3f0-7a7094e42ec7)
+
 Key Pair Creation: While creating the instances, generate a key pair to securely connect to them. The key pair will automatically download to our local system’s downloads folder.
 ![image](https://github.com/user-attachments/assets/73b7e7b2-0a3b-4ac6-8748-f9d08ba07ec7)
 ![image](https://github.com/user-attachments/assets/5060da8e-ff6a-4db4-8fa3-6c64fa5a24d8)
@@ -33,6 +34,7 @@ $ sudo hostnamectl set-hostname Jenkins
 Change the shell to bash to reflect the updated hostname.
 $ /bin/bash
 ![image](https://github.com/user-attachments/assets/da5c2ca7-0559-4865-84e8-e754e1c338fa)
+
 Step 3: Installing Jenkins:
 Update the package lists for available upgrades.
 $ sudo apt update
