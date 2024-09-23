@@ -131,6 +131,7 @@ Step 9: Installing Ansible on Jenkins Instance:
 Install Ansible on the Jenkins instance by following the instructions from the Ansible documentation:
 ![image](https://github.com/user-attachments/assets/6248d0df-a709-4dae-a1cb-25e6af3410b9)
 ![image](https://github.com/user-attachments/assets/fac76007-67f9-4071-a4ce-660b0fbdc4fd)
+
 To run Docker commands on the Jenkins instance, install additional dependencies:
 $ sudo apt install python3-pip
 $ pip install docker
@@ -156,6 +157,7 @@ Create a 'playbook' directory on the Jenkins instance and a deployment.yaml file
 
 This playbook includes deployment tasks such as stopping and removing containers, building Docker images, and creating containers on the target remote server (Docker server).
 ![image](https://github.com/user-attachments/assets/1d3d864a-ed8a-456c-a979-1cd9f69b9b1c)
+
 Run the ansible playbook “deployment.yaml” to deploy the application manually.
 ![image](https://github.com/user-attachments/assets/61a1c7fb-00ea-4059-965a-22c5fdf830ad)
 After successful execution of playbook, Docker images and containers will be created on the Docker server. 
